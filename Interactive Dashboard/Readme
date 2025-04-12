@@ -1,0 +1,65 @@
+# Startup Performance Dashboard
+
+This project creates an interactive web-based dashboard using Dash and Plotly to visualize startup performance data. The dashboard includes four charts (Pie, Bar, Scatter, and Bubble) with dynamic filters for sector, region, and funding stage. It also exports a static HTML snapshot for sharing.
+
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Dashboard Details](#dashboard-details)
+- [Author](#author)
+- [Contact](#contact)
+
+## Project Overview
+The **Startup Performance Dashboard** is a Python application built with Dash, Plotly, and Bootstrap. It visualizes startup metrics such as revenue, profit, employees, and market share, allowing users to filter data by sector, region, and funding stage. The dashboard is interactive in a web browser and generates a static HTML file (`Interactive_dashboard.html`) for offline viewing.
+
+## Features
+- **Interactive Filters**: Dropdown menus to filter by sector, region, and funding stage.
+- **Four Charts**:
+  - Pie Chart: Revenue by sector.
+  - Bar Chart: Average employees by funding stage.
+  - Scatter Chart: Revenue vs. profit.
+  - Bubble Chart: Market share vs. customer count.
+- **Responsive Design**: Uses Bootstrap for a clean, mobile-friendly layout.
+- **Static HTML Export**: Saves a snapshot of the dashboard with Plotly’s interactivity (hover, zoom, pan).
+- **Error Handling**: Displays "No Data Available" when filters yield no results.
+
+## Requirements
+- Python 3.7 or higher
+- Required Python packages:
+  - `pandas`
+  - `plotly`
+  - `dash`
+  - `dash-bootstrap-components`
+
+## Installation
+1. **Clone or Download the Repository**:
+   ```bash
+   git clone <your-repository-url>
+   cd <repository-directory>
+
+## Author
+
+<div align="center">
+  <img src="assets/PYE.svg" alt="Author Banner" style="width:100%; height:auto; border-radius: 8px;">
+</div>
+
+**Author**: [Pavan Yellathakota]  
+**Date**: FEB 2025  
+
+---
+
+## Contact Information
+
+You can reach out to me through the following channels:
+
+- **Email**: [pavanyellathakota@gmail.com](mailto:pavanyellathakota@gmail.com)
+- **LinkedIn**: [Pavan Yellathakota](https://www.linkedin.com/in/pavanyellathakota/)
+
+For more projects and resources, check out:
+
+- **GitHub**: [Pavan Yellathakota](https://github.com/PavanYellathakota)
+- **Portfolio**: [pye.pages.dev](https://pye.pages.dev)
+
+---

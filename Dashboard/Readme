@@ -1,0 +1,68 @@
+# Startup Ecosystem Insights Dashboard
+
+This project creates a Plotly-based dashboard to visualize startup performance data using a 2x3 subplot grid. The dashboard displays six charts (Pie, Box, Bar, Line, Scatter, and Bubble) to provide insights into revenue, profit, employees, and market share across various sectors, regions, and funding stages.
+
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Author](#author)
+- [Contact](#contact)
+
+## Project Overview
+The **Startup Ecosystem Insights Dashboard** is a Python application that uses Plotly to create an interactive visualization of startup data. The dashboard is organized as a 2x3 subplot grid, displaying:
+- **Pie Chart**: Revenue distribution by sector.
+- **Box Plot**: Profit distribution by region.
+- **Bar Chart**: Average employees by funding stage.
+- **Line Chart**: Revenue trend by founded year.
+- **Scatter Chart**: Revenue vs. profit.
+- **Bubble Chart**: Market share vs. customer count.
+
+The output is displayed in a web browser and saved as a static HTML file (`startup_dashboard.html`) for sharing.
+
+## Features
+- Interactive charts with hover, zoom, and pan capabilities.
+- Clean, white-themed layout with clear titles and axis labels.
+- Static HTML export for easy distribution.
+- Modular code structure for easy customization.
+- Visualizes key startup metrics across multiple dimensions (sector, region, funding stage, etc.).
+
+## Requirements
+- Python 3.7 or higher
+- Required Python packages:
+  - `pandas`
+  - `plotly`
+  - `numpy`
+
+## Installation
+1. **Clone or Download the Repository**:
+   ```bash
+   git clone <your-repository-url>
+   cd <repository-directory>
+
+## Author
+
+<div align="center">
+  <img src="assets/PYE.svg" alt="Author Banner" style="width:100%; height:auto; border-radius: 8px;">
+</div>
+
+**Author**: [Pavan Yellathakota]  
+**Date**: FEB 2025  
+
+---
+
+## Contact Information
+
+You can reach out to me through the following channels:
+
+- **Email**: [pavanyellathakota@gmail.com](mailto:pavanyellathakota@gmail.com)
+- **LinkedIn**: [Pavan Yellathakota](https://www.linkedin.com/in/pavanyellathakota/)
+
+For more projects and resources, check out:
+
+- **GitHub**: [Pavan Yellathakota](https://github.com/PavanYellathakota)
+- **Portfolio**: [pye.pages.dev](https://pye.pages.dev)
+
+---
+
