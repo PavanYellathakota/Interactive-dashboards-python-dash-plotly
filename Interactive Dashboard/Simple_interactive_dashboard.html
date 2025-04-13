@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Interactive Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            width: 200px;
+        }
+        .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .chart {
+            flex: 1;
+            min-width: 400px;
+            max-width: 580px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        .error-message {
+            text-align: center;
+            color: red;
+            font-size: 18px;
+        }
+        @media (max-width: 900px) {
+            .chart {
+                min-width: 100%;
+            }
+        }
+        @media (max-width: 600px) {
+            select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Startup Interactive Dashboard</h1>
+        <div class="filter-container">
+            <div class="filter-group">
+                <label for="sector-filter">Select Sector:</label>
+                <select id="sector-filter" multiple>
+                    <option value="all" selected>All Sectors</option>
+                    <option value="Fintech">Fintech</option><option value="Health">Health</option><option value="EduTech">EduTech</option><option value="Retail">Retail</option><option value="AI">AI</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="region-filter">Select Region:</label>
+                <select id="region-filter" multiple>
+                    <option value="all" selected>All Regions</option>
+                    <option value="US">US</option><option value="Europe">Europe</option><option value="Asia">Asia</option>
+                </select>
+            </div>
+        </div>
+        <div class="chart-container">
+            <div class="chart">
+                <h2>Revenue by Startup</h2>
+                <div id="bar-chart"><div>                            <div id="a1b2b137-1ca4-4c83-85f7-90486b38edf9" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("a1b2b137-1ca4-4c83-85f7-90486b38edf9")) {                    Plotly.newPlot(                        "a1b2b137-1ca4-4c83-85f7-90486b38edf9",                        [{"alignmentgroup":"True","hovertemplate":"sector=Fintech\u003cbr\u003estartup=%{x}\u003cbr\u003erevenue=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Fintech","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"Fintech","offsetgroup":"Fintech","orientation":"v","showlegend":true,"textposition":"auto","x":["A","C","G","L"],"xaxis":"x","y":[6.5,4.8,10.2,11.4],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"sector=Health\u003cbr\u003estartup=%{x}\u003cbr\u003erevenue=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Health","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"Health","offsetgroup":"Health","orientation":"v","showlegend":true,"textposition":"auto","x":["B","E","J"],"xaxis":"x","y":[8.2,9.5,6.3],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"sector=EduTech\u003cbr\u003estartup=%{x}\u003cbr\u003erevenue=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"EduTech","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"EduTech","offsetgroup":"EduTech","orientation":"v","showlegend":true,"textposition":"auto","x":["D","F","M"],"xaxis":"x","y":[7.1,3.8,4.2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"sector=Retail\u003cbr\u003estartup=%{x}\u003cbr\u003erevenue=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Retail","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"Retail","offsetgroup":"Retail","orientation":"v","showlegend":true,"textposition":"auto","x":["H","I","N"],"xaxis":"x","y":[7.9,8.6,9.8],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"sector=AI\u003cbr\u003estartup=%{x}\u003cbr\u003erevenue=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"AI","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"AI","offsetgroup":"AI","orientation":"v","showlegend":true,"textposition":"auto","x":["K","O"],"xaxis":"x","y":[5.9,7.4],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"startup"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"revenue"}},"legend":{"title":{"text":"sector"},"tracegroupgap":0},"title":{"text":"Revenue by Startup"},"barmode":"relative"},                        {"responsive": true}                    )                };                            </script>        </div></div>
+            </div>
+            <div class="chart">
+                <h2>Sector Distribution</h2>
+                <div id="pie-chart"><div>                            <div id="16f5ad8e-a11f-4782-b31a-7de422fa1104" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("16f5ad8e-a11f-4782-b31a-7de422fa1104")) {                    Plotly.newPlot(                        "16f5ad8e-a11f-4782-b31a-7de422fa1104",                        [{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"hovertemplate":"sector=%{label}\u003cbr\u003ecount=%{value}\u003cextra\u003e\u003c\u002fextra\u003e","labels":["Fintech","Health","EduTech","Retail","AI"],"legendgroup":"","name":"","showlegend":true,"values":[4,3,3,3,2],"type":"pie"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"legend":{"tracegroupgap":0},"title":{"text":"Sector Distribution"}},                        {"responsive": true}                    )                };                            </script>        </div></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load data
+        const data = [{"startup": "A", "revenue": 6.5, "profit": 2.8, "sector": "Fintech", "region": "US", "employees": 60, "funding_stage": "Series A", "growth": 18, "founded_year": 2018, "customer_count": 5000, "market_share": 5.2}, {"startup": "B", "revenue": 8.2, "profit": 3.9, "sector": "Health", "region": "Europe", "employees": 150, "funding_stage": "Seed", "growth": 28, "founded_year": 2020, "customer_count": 12000, "market_share": 8.1}, {"startup": "C", "revenue": 4.8, "profit": 1.9, "sector": "Fintech", "region": "Asia", "employees": 40, "funding_stage": "Series B", "growth": 15, "founded_year": 2019, "customer_count": 3000, "market_share": 3.4}, {"startup": "D", "revenue": 7.1, "profit": 3.0, "sector": "EduTech", "region": "Asia", "employees": 90, "funding_stage": "Series A", "growth": 20, "founded_year": 2017, "customer_count": 8000, "market_share": 6.5}, {"startup": "E", "revenue": 9.5, "profit": 4.5, "sector": "Health", "region": "US", "employees": 120, "funding_stage": "Series B", "growth": 35, "founded_year": 2016, "customer_count": 15000, "market_share": 10.3}, {"startup": "F", "revenue": 3.8, "profit": 1.4, "sector": "EduTech", "region": "Europe", "employees": 50, "funding_stage": "Seed", "growth": 12, "founded_year": 2021, "customer_count": 2000, "market_share": 2.8}, {"startup": "G", "revenue": 10.2, "profit": 5.1, "sector": "Fintech", "region": "Asia", "employees": 250, "funding_stage": "Series A", "growth": 40, "founded_year": 2015, "customer_count": 25000, "market_share": 12.7}, {"startup": "H", "revenue": 7.9, "profit": 3.7, "sector": "Retail", "region": "US", "employees": 180, "funding_stage": "Series A", "growth": 25, "founded_year": 2018, "customer_count": 10000, "market_share": 7.9}, {"startup": "I", "revenue": 8.6, "profit": 4.2, "sector": "Retail", "region": "Europe", "employees": 100, "funding_stage": "Seed", "growth": 30, "founded_year": 2019, "customer_count": 9000, "market_share": 6.8}, {"startup": "J", "revenue": 6.3, "profit": 2.9, "sector": "Health", "region": "Asia", "employees": 70, "funding_stage": "Series B", "growth": 16, "founded_year": 2020, "customer_count": 4000, "market_share": 4.5}, {"startup": "K", "revenue": 5.9, "profit": 2.3, "sector": "AI", "region": "US", "employees": 80, "funding_stage": "Series A", "growth": 22, "founded_year": 2017, "customer_count": 6000, "market_share": 5.9}, {"startup": "L", "revenue": 11.4, "profit": 5.8, "sector": "Fintech", "region": "Europe", "employees": 300, "funding_stage": "Series C", "growth": 45, "founded_year": 2014, "customer_count": 30000, "market_share": 15.4}, {"startup": "M", "revenue": 4.2, "profit": 1.6, "sector": "EduTech", "region": "Asia", "employees": 35, "funding_stage": "Seed", "growth": 10, "founded_year": 2022, "customer_count": 1500, "market_share": 2.1}, {"startup": "N", "revenue": 9.8, "profit": 4.9, "sector": "Retail", "region": "US", "employees": 200, "funding_stage": "Series B", "growth": 38, "founded_year": 2016, "customer_count": 20000, "market_share": 11.2}, {"startup": "O", "revenue": 7.4, "profit": 3.3, "sector": "AI", "region": "Europe", "employees": 110, "funding_stage": "Series A", "growth": 24, "founded_year": 2018, "customer_count": 7000, "market_share": 6.3}];
+
+        // Debug: Log initial data
+        console.log("Loaded data:", data);
+
+        // Filter function
+        function updateCharts() {
+            try {
+                // Get selected filter values
+                const sectorFilter = Array.from(document.getElementById('sector-filter').selectedOptions).map(opt => opt.value);
+                const regionFilter = Array.from(document.getElementById('region-filter').selectedOptions).map(opt => opt.value);
+
+                console.log("Sector filter:", sectorFilter);
+                console.log("Region filter:", regionFilter);
+
+                // Filter data
+                let filteredData = data;
+                if (!sectorFilter.includes('all') && sectorFilter.length > 0) {
+                    filteredData = filteredData.filter(row => sectorFilter.includes(row.sector));
+                }
+                if (!regionFilter.includes('all') && regionFilter.length > 0) {
+                    filteredData = filteredData.filter(row => regionFilter.includes(row.region));
+                }
+
+                console.log("Filtered data:", filteredData);
+
+                // Update Bar Chart
+                const barData = filteredData.length > 0 ? [{
+                    x: filteredData.map(row => row.startup),
+                    y: filteredData.map(row => row.revenue),
+                    type: 'bar',
+                    marker: { 
+                        color: filteredData.map(row => {
+                            return row.sector === 'Fintech' ? '#636EFA' :
+                                   row.sector === 'Health' ? '#EF553B' :
+                                   row.sector === 'EduTech' ? '#00CC96' :
+                                   row.sector === 'Retail' ? '#AB63FA' : '#FFA15A';
+                        })
+                    },
+                    text: filteredData.map(row => row.startup),
+                    textposition: 'auto'
+                }] : [{
+                    x: [],
+                    y: [],
+                    type: 'bar',
+                    text: []
+                }];
+
+                Plotly.newPlot('bar-chart', barData, {
+                    title: filteredData.length > 0 ? 'Revenue by Startup' : 'No Data Available',
+                    xaxis: { title: 'Startup' },
+                    yaxis: { title: 'Revenue ($M)' },
+                    responsive: true
+                });
+
+                // Update Pie Chart
+                const sectorCounts = {};
+                filteredData.forEach(row => {
+                    sectorCounts[row.sector] = (sectorCounts[row.sector] || 0) + 1;
+                });
+                const pieData = Object.keys(sectorCounts).length > 0 ? [{
+                    labels: Object.keys(sectorCounts),
+                    values: Object.values(sectorCounts),
+                    type: 'pie',
+                    textinfo: 'percent+label'
+                }] : [{
+                    labels: [],
+                    values: [],
+                    type: 'pie'
+                }];
+
+                Plotly.newPlot('pie-chart', pieData, {
+                    title: Object.keys(sectorCounts).length > 0 ? 'Sector Distribution' : 'No Data Available',
+                    responsive: true
+                });
+            } catch (e) {
+                console.error("Error updating charts:", e);
+                document.getElementById('bar-chart').innerHTML = '<p class="error-message">Failed to update Bar Chart</p>';
+                document.getElementById('pie-chart').innerHTML = '<p class="error-message">Failed to update Pie Chart</p>';
+            }
+        }
+
+        // Attach event listeners
+        try {
+            const sectorFilter = document.getElementById('sector-filter');
+            const regionFilter = document.getElementById('region-filter');
+
+            // Add event listeners
+            sectorFilter.addEventListener('change', function() {
+                console.log("Sector filter changed:", this.value);
+                updateCharts();
+            });
+            regionFilter.addEventListener('change', function() {
+                console.log("Region filter changed:", this.value);
+                updateCharts();
+            });
+
+            // Initial render
+            console.log("Initializing charts");
+            updateCharts();
+        } catch (e) {
+            console.error("Error setting up filters:", e);
+            document.getElementById('bar-chart').innerHTML = '<p class="error-message">Failed to initialize charts</p>';
+            document.getElementById('pie-chart').innerHTML = '<p class="error-message">Failed to initialize charts</p>';
+        }
+    </script>
+</body>
+</html>
